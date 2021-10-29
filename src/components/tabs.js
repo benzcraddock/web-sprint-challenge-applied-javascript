@@ -55,15 +55,12 @@ const tabsAppender = (selector) => {
 
   axios.get(`http://localhost:5000/api/topics`)
     .then(res => {
-      // console.log(res.data.topics);
-      const tabsContainer = document.querySelector('.tabs-container');
-      const dataObj = Tabs(res.data.topics);
-      tabsContainer.appendChild(dataObj);
+      const tabsContainer = document.querySelector(selector);
+      tabsContainer.appendChild(Tabs(res.data.topics));
     })
     .catch(err =>{
       console.error(err);
     })
-
 }
 
 export { Tabs, tabsAppender }

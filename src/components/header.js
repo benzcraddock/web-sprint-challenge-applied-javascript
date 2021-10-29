@@ -51,7 +51,6 @@ const headerAppender = (selector) => {
   // call Header function while appending return header to DOM
   headerContainer.appendChild(Header('Lambda School', 'October 29, 2021', 25));
 
-  // 'Lambda School', 'October 29, 2021', 25
   return headerAppender;
 }
 
