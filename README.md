@@ -60,7 +60,21 @@ In meeting the minimum viable product (MVP) specifications listed below, your pr
 Be prepared to demonstrate your understanding of this week's concepts by answering questions on the following topics. You might prepare by writing down your own answers before hand.
 
 1. What is the DOM?
+
+The DOM is the Document Object Model. Essentially, when a web page is loaded into a browser, the browser will look for the HTML file first and use this file as the blueprint on how to build the web page. The browser then parses these instructions and constructs a model for how the web page looks and interacts using JavaScript. The DOM is essentially a JavaScript object that contains every element in order on the web page. The data structure of the DOM is built as sa tree, where parent elements have nested children elements.
+
 2. What is an event?
+
+An event can be considered ever user interaction that occurs with a web site. This includes a click, mouse movement, scrolling on the web page, pressing a key, enlarging an image, hover, and much more. The browser can detect all of these events, when an event occurs it is called a trigger. 
+
 3. What is an event listener?
+
+An event listener is basically an procedural object in JavaScript that can handle an event and waits for the event to occur. Once an element is selected, we use '.addEventListener' method on the selected element and provide the event to listen for and the callback to fire when said event is triggered as two arguments for the method.
+
 4. Why would we convert a NodeList into an Array?
+
+Since NodeList only has access to the .forEach array method, we would want to convert a NodeList into an Array if we wanted to use other array methods. Also, we would do the conversion by using the Array.from() method.
+
 5. What is a component?
+
+A component is a single modular pieces of code that usually consist of HTML, CSS and JavaScript. A component is reusable, DRY, and can stand alone. An example of a component may be a button component that creates another button in HTML, or an event listener for a button where an alert pops up when you click.
