@@ -1,3 +1,5 @@
+import axios from "axios";
+
 const Card = (article) => {
   // TASK 5
   // ---------------------
@@ -64,7 +66,15 @@ const cardAppender = (selector) => {
   // Append each card to the element in the DOM that matches the selector passed to the function.
   //
 
-  
+  axios.get('http://localhost:5000/api/articles')
+    .then(res => {
+      console.log(res.data);
+      const cardsContainer = document.querySelector(selector);
+      cardsContainer.appendChild(Card(res.data.articles.javascript))
+    })
+    .catch(err => {
+      console.error(err);
+    })
 }
 
 export { Card, cardAppender }
