@@ -13,6 +13,31 @@ const Tabs = (topics) => {
   //   <div class="tab">technology</div>
   // </div>
   //
+
+  // create elements
+  const divTopics = document.createElement('div');
+  const divTab = document.createElement('div');
+
+  // create hierarchy
+  divTopics.appendChild(divTab);
+
+  // add class names, attributes and text
+  divTopics.classList.add('topics');
+  divTab.classList.add('tab');
+  divTab.textContent = topics;
+
+  // iterate over array creating topic element for each element in array
+  topics.forEach(elem => {
+    // create topic every time it loops
+    const topic = document.createElement('topic');
+    // programmatically update content by setting each topic's textContent to each element
+    topic.textContent = elem;
+    // append topic's to divTopics
+    divTopics.appendChild(topic);
+  })
+
+  // return
+  return divTopics;
 }
 
 const tabsAppender = (selector) => {
