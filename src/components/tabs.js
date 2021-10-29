@@ -42,6 +42,8 @@ const Tabs = (topics) => {
   return divTopics;
 }
 
+
+
 const tabsAppender = (selector) => {
   // TASK 4
   // ---------------------
@@ -51,19 +53,16 @@ const tabsAppender = (selector) => {
   // Append the tabs to the element in the DOM that matches the selector passed to the function.
   //
 
-  // select header
-  // const tabsContainer = document.querySelector('.tabs-container');
-
-  // axios.get(`http://localhost:5000/api/${selector}`)
-  //   .then(res => {
-  //     // call function while appending return tabsContainer to DOM
-  //     tabsContainer.appendChild(Tabs(res.data));
-  //   })
-  //   .catch(err =>{
-  //     console.error(err);
-  //   })
-
-
+  axios.get(`http://localhost:5000/api/topics`)
+    .then(res => {
+      // console.log(res.data.topics);
+      const tabsContainer = document.querySelector('.tabs-container');
+      const dataObj = Tabs(res.data.topics);
+      tabsContainer.appendChild(dataObj);
+    })
+    .catch(err =>{
+      console.error(err);
+    })
 
 }
 
